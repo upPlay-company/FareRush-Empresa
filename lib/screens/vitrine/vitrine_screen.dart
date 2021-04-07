@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class PedidosScreen extends StatelessWidget {
+class VitrineScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(color: Colors.green,);
   }
 }

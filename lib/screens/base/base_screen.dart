@@ -1,3 +1,6 @@
+import 'package:farerush_empresa/screens/pedidos/pedidos_screen.dart';
+import 'package:farerush_empresa/screens/perfil/perfil_screen.dart';
+import 'package:farerush_empresa/screens/vitrine/vitrine_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bmnav/bmnav.dart' as bmnav;
 
@@ -14,12 +17,12 @@ class _BaseScreenState extends State<BaseScreen> {
   /*static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);*/
   static List<Widget> _widgetOptions = <Widget>[
-    Container(),
-    Container(),
-    Container(),
+    PedidosScreen(),
+    VitrineScreen(),
+    PerfilScreen(),
   ];
 
-  Widget currentScreen = Container();
+  Widget currentScreen = PedidosScreen();
 
   @override
   void initState() {
@@ -43,7 +46,7 @@ class _BaseScreenState extends State<BaseScreen> {
         items: [
           bmnav.BottomNavItem(Icons.description, label: 'Pedidos'),
           bmnav.BottomNavItem(Icons.add_business, label: 'Vitrine'),
-          bmnav.BottomNavItem(Icons.person, label: 'Pefil'),
+          bmnav.BottomNavItem(Icons.person, label: 'Perfil'),
         ],
       ),
       body: Center(
