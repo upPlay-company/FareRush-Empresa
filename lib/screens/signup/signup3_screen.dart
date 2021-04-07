@@ -1,13 +1,14 @@
+import 'package:brasil_fields/brasil_fields.dart';
 import 'package:farerush_empresa/screens/base/base_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class LoginScreen extends StatefulWidget {
+class SignUp3Screen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _SignUp3ScreenState createState() => _SignUp3ScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUp3ScreenState extends State<SignUp3Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,12 +31,19 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Entrar',
+                        'Informações do',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 22,
                             fontWeight: FontWeight.w800),
                       ),
+                      Text(
+                        'Representante Legal',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w800),
+                      )
                     ],
                   ),
                 ],
@@ -50,6 +58,25 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20, top: 4, bottom: 4),
                     child: TextFormField(
+                      autocorrect: false,
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Nome Completo'),
+                    ),
+                  ),
+                )),
+            Padding(
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20, top: 4, bottom: 4),
+                    child: TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       autocorrect: false,
                       style: TextStyle(
@@ -57,7 +84,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       decoration: InputDecoration(
                           border: InputBorder.none,
-                          icon: Icon(Icons.email, color: Theme.of(context).primaryColor),
                           hintText: 'Email'),
                     ),
                   ),
@@ -72,14 +98,36 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.only(left: 20, top: 4, bottom: 4),
                     child: TextFormField(
                       autocorrect: false,
-                      obscureText: true,
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(15),
+                        FilteringTextInputFormatter.digitsOnly,
+                        TelefoneInputFormatter(),
+                      ],
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Número Celular'),
+                    ),
+                  ),
+                )),
+            Padding(
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20, top: 4, bottom: 4),
+                    child: TextFormField(
+                      autocorrect: false,
                       style: TextStyle(
                         color: Colors.black,
                       ),
                       decoration: InputDecoration(
-                          icon: Icon(Icons.lock, color: Theme.of(context).primaryColor),
                           border: InputBorder.none,
-                          hintText: 'Digite uma senha'),
+                          hintText: 'Como você conheceu o Fare Rush?'),
                     ),
                   ),
                 )),
@@ -99,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         borderRadius: BorderRadius.circular(30)),
                   ),
                   child: Text(
-                    'Entrar',
+                    'Concluir',
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w700,

@@ -1,4 +1,5 @@
 import 'package:farerush_empresa/screens/inicial/components/back_image.dart';
+import 'package:farerush_empresa/screens/login/login_screen.dart';
 import 'package:farerush_empresa/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -49,7 +50,9 @@ class InicialScreen extends StatelessWidget {
                     height: 54,
                     width: MediaQuery.of(context).size.width,
                     child: ElevatedButton(
-                      onPressed: (){},
+                      onPressed: (){
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen()));
+                      },
                       style: ElevatedButton.styleFrom(
                         primary: Theme.of(context).primaryColor,
                         elevation: 0,

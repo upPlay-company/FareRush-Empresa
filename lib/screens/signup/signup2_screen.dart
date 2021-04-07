@@ -1,14 +1,14 @@
 import 'package:brasil_fields/brasil_fields.dart';
-import 'package:farerush_empresa/screens/signup/signup2_screen.dart';
+import 'package:farerush_empresa/screens/signup/signup3_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class SignUpScreen extends StatefulWidget {
+class SignUp2Screen extends StatefulWidget {
   @override
-  _SignUpScreenState createState() => _SignUpScreenState();
+  _SignUp2ScreenState createState() => _SignUp2ScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _SignUp2ScreenState extends State<SignUp2Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,18 +31,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Vamos Começar',
+                        'Endereço do',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 22,
                             fontWeight: FontWeight.w800),
                       ),
                       Text(
-                        'Informações do seu Restaurante',
+                        'Restaurante',
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w200),
+                            fontSize: 22,
+                            fontWeight: FontWeight.w800),
                       )
                     ],
                   ),
@@ -58,14 +58,94 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20, top: 4, bottom: 4),
                     child: TextFormField(
-                      keyboardType: TextInputType.emailAddress,
+                      keyboardType: TextInputType.number,
+                      autocorrect: false,
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                      inputFormatters: [
+                        FilteringTextInputFormatter.digitsOnly,
+                        CepInputFormatter()
+                      ],
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'CEP'),
+                    ),
+                  ),
+                )),
+            Padding(
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20, top: 4, bottom: 4),
+                    child: TextFormField(
                       autocorrect: false,
                       style: TextStyle(
                         color: Colors.black,
                       ),
                       decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Nome do Restaurante'),
+                          hintText: 'Cidade'),
+                    ),
+                  ),
+                )),
+            Padding(
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20, top: 4, bottom: 4),
+                    child: TextFormField(
+                      autocorrect: false,
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Estado'),
+                    ),
+                  ),
+                )),
+            Padding(
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20, top: 4, bottom: 4),
+                    child: TextFormField(
+                      autocorrect: false,
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Bairro'),
+                    ),
+                  ),
+                )),
+            Padding(
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20, top: 4, bottom: 4),
+                    child: TextFormField(
+                      autocorrect: false,
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Rua'),
                     ),
                   ),
                 )),
@@ -83,38 +163,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       style: TextStyle(
                         color: Colors.black,
                       ),
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(15),
-                        FilteringTextInputFormatter.digitsOnly,
-                        TelefoneInputFormatter()
-                      ],
                       decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Contato do Restaurante'),
-                    ),
-                  ),
-                )),
-            Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(30)),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20, top: 4, bottom: 4),
-                    child: TextFormField(
-                      keyboardType: TextInputType.number,
-                      autocorrect: false,
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
-                      inputFormatters: [
-                        FilteringTextInputFormatter.digitsOnly,
-                        CnpjInputFormatter()
-                      ],
-                      decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'CNPJ do Restaurante'),
+                          hintText: 'Número'),
                     ),
                   ),
                 )),
@@ -131,71 +182,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       style: TextStyle(
                         color: Colors.black,
                       ),
-                      inputFormatters: [],
                       decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Tipo de cozinha'),
-                    ),
-                  ),
-                )),
-            Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(30)),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20, top: 4, bottom: 4),
-                    child: TextFormField(
-                      keyboardType: TextInputType.emailAddress,
-                      autocorrect: false,
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
-                      inputFormatters: [],
-                      decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'Email do Restaurante'),
-                    ),
-                  ),
-                )),
-            Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(30)),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20, top: 4, bottom: 4),
-                    child: TextFormField(
-                      autocorrect: false,
-                      obscureText: true,
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
-                      decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'Digite uma senha'),
-                    ),
-                  ),
-                )),
-            Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(30)),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20, top: 4, bottom: 4),
-                    child: TextFormField(
-                      autocorrect: false,
-                      obscureText: true,
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
-                      decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'Confirmar senha'),
+                          hintText: 'Complemento'),
                     ),
                   ),
                 )),
@@ -206,7 +195,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 width: MediaQuery.of(context).size.width,
                 child: ElevatedButton(
                   onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp2Screen()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp3Screen()));
                   },
                   style: ElevatedButton.styleFrom(
                     primary: Colors.black,
