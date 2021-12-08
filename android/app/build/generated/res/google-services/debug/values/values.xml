@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">1066109344517-62osucnbjbi3g7odd84u14dga420oktb.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1066109344517</string>
+    <string name="google_api_key" translatable="false">AIzaSyBQPDXWzOawqfSLwSGbbwJ6lceSEMHb-gE</string>
+    <string name="google_app_id" translatable="false">1:1066109344517:android:f845169bfe53411a6af56c</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBQPDXWzOawqfSLwSGbbwJ6lceSEMHb-gE</string>
+    <string name="google_storage_bucket" translatable="false">fire-rush-5b868.appspot.com</string>
+    <string name="project_id" translatable="false">fire-rush-5b868</string>
+</resources>

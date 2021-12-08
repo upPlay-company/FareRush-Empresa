@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1066109344517",
+    "project_id": "fire-rush-5b868",
+    "storage_bucket": "fire-rush-5b868.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066109344517:android:f845169bfe53411a6af56c",
+        "android_client_info": {
+          "package_name": "com.farerush_empresa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066109344517-62osucnbjbi3g7odd84u14dga420oktb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQPDXWzOawqfSLwSGbbwJ6lceSEMHb-gE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066109344517-62osucnbjbi3g7odd84u14dga420oktb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

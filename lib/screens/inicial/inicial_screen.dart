@@ -1,9 +1,9 @@
+import 'package:farerush_empresa/commons/constante.dart';
+import 'package:farerush_empresa/commons/routes.dart';
 import 'package:farerush_empresa/screens/inicial/components/back_image.dart';
-import 'package:farerush_empresa/screens/login/login_screen.dart';
-import 'package:farerush_empresa/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 
-class InicialScreen extends StatelessWidget {
+class InitialScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BackImage(
@@ -51,10 +51,10 @@ class InicialScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     child: ElevatedButton(
                       onPressed: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen()));
+                        Navigator.of(context).pushNamed(loginRoute);
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Theme.of(context).primaryColor,
+                        primary: secondaryColor,
                         elevation: 0,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30)),
@@ -71,13 +71,13 @@ class InicialScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+                  padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
                   child: SizedBox(
                     height: 54,
                     width: MediaQuery.of(context).size.width,
                     child: ElevatedButton(
                       onPressed: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUpScreen()));
+                        Navigator.of(context).pushNamed(signupRoute);
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.black,

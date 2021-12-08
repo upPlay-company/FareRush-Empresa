@@ -1,7 +1,12 @@
+import 'package:farerush_empresa/commons/routes.dart';
+import 'package:farerush_empresa/store/user_manager_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:get_it/get_it.dart';
 
 class PerfilScreen extends StatelessWidget {
+
+  final UserManagerStore userManagerStore = GetIt.I<UserManagerStore>();
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +41,7 @@ class PerfilScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: Text(
-                    // TODO: NOME DO RESTAURANTE
-                    "FARE RUSH",
+                    userManagerStore.user.nameUser,
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -96,7 +100,10 @@ class PerfilScreen extends StatelessWidget {
             color: Colors.grey[200],
             child: Center(
               child: GestureDetector(
-                onTap: (){},
+                onTap: (){
+                  userManagerStore.logout();
+                  Navigator.pushNamedAndRemoveUntil(context, rootRoute, (route) => false);
+                },
                 child: Text('Sair', style: TextStyle(color: Colors.red, fontSize: 16),
                 ),
               ),
