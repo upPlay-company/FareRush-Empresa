@@ -1,9 +1,14 @@
 import 'package:farerush_empresa/commons/constante.dart';
 import 'package:farerush_empresa/commons/routes.dart';
 import 'package:farerush_empresa/screens/inicial/components/back_image.dart';
+import 'package:farerush_empresa/store/user_manager_store.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
 class InitialScreen extends StatelessWidget {
+
+  final UserManagerStore userManagerStore = GetIt.I<UserManagerStore>();
+
   @override
   Widget build(BuildContext context) {
     return BackImage(
@@ -51,7 +56,11 @@ class InitialScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     child: ElevatedButton(
                       onPressed: (){
-                        Navigator.of(context).pushNamed(loginRoute);
+                        if(userManagerStore.isLoggedIn){
+                          Navigator.of(context).pushNamedAndRemoveUntil(baseRoute, (route) => false);
+                        } else {
+                          Navigator.of(context).pushNamed(loginRoute);
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                         primary: secondaryColor,
@@ -77,7 +86,11 @@ class InitialScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     child: ElevatedButton(
                       onPressed: (){
-                        Navigator.of(context).pushNamed(signupRoute);
+                        if(userManagerStore.isLoggedIn){
+                          Navigator.of(context).pushNamedAndRemoveUntil(baseRoute, (route) => false);
+                        } else {
+                          Navigator.of(context).pushNamed(signupRoute);
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.black,

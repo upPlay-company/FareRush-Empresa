@@ -1,4 +1,5 @@
 import 'package:farerush_empresa/screens/base/base_screen.dart';
+import 'package:farerush_empresa/screens/faturamento/farutamento_screen.dart';
 import 'package:farerush_empresa/screens/inicial/inicial_screen.dart';
 import 'package:farerush_empresa/screens/login/login_screen.dart';
 import 'package:farerush_empresa/screens/signup/signup_screen.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 
 const String rootRoute = "/";
 
+const String faturamentoRoute = "/faturamento_screen";
 const String baseRoute = "/base_screen";
 const String signupRoute = "/signup_screen";
 const String loginRoute = "/login";
@@ -13,6 +15,8 @@ const String loginRoute = "/login";
 class RouterManager {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case faturamentoRoute:
+        return MaterialPageRoute(builder: (context) => FaturamentoScreen());
       case baseRoute:
         return MaterialPageRoute(builder: (context) => BaseScreen());
       case signupRoute:

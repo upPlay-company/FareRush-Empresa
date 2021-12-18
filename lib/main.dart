@@ -53,7 +53,6 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: [const Locale('pt', 'BR')],
       builder: EasyLoading.init(),
-      initialRoute: '/',
       onGenerateRoute: RouterManager.generateRoute,
       theme: ThemeData.dark().copyWith(
         primaryColor: Colors.black,

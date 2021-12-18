@@ -67,7 +67,9 @@ class PerfilScreen extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushNamed(faturamentoRoute);
+            },
             child: rowsColumns(
               "Faturamento",
               Icons.account_balance_wallet_rounded,
