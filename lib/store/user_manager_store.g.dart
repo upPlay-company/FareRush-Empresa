@@ -32,6 +32,21 @@ mixin _$UserManagerStore on _UserManagerStore, Store {
     });
   }
 
+  final _$companyIdAtom = Atom(name: '_UserManagerStore.companyId');
+
+  @override
+  String get companyId {
+    _$companyIdAtom.reportRead();
+    return super.companyId;
+  }
+
+  @override
+  set companyId(String value) {
+    _$companyIdAtom.reportWrite(value, super.companyId, () {
+      super.companyId = value;
+    });
+  }
+
   final _$_UserManagerStoreActionController =
       ActionController(name: '_UserManagerStore');
 
@@ -50,6 +65,7 @@ mixin _$UserManagerStore on _UserManagerStore, Store {
   String toString() {
     return '''
 user: ${user},
+companyId: ${companyId},
 isLoggedIn: ${isLoggedIn}
     ''';
   }

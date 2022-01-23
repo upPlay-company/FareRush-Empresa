@@ -1,3 +1,4 @@
+import 'package:farerush_empresa/commons/sideMenu.dart';
 import 'package:flutter/material.dart';
 
 class PedidosScreen extends StatelessWidget {
@@ -23,25 +24,27 @@ class PedidosScreen extends StatelessWidget {
                           decoration: InputDecoration(
                               hintText: 'Pesquisar',
                               hintStyle: TextStyle(color: Colors.black),
-                              icon: Icon(Icons.search, color: Colors.black,),
-                              border: InputBorder.none
-                          ),
+                              icon: Icon(
+                                Icons.search,
+                                color: Colors.black,
+                              ),
+                              border: InputBorder.none),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(width: 10,),
+                  SizedBox(
+                    width: 10,
+                  ),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       // TODO: ORDERS PEDIDOS
                     },
                     child: Container(
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.grey[400]
-                      ),
+                          shape: BoxShape.circle, color: Colors.grey[400]),
                       child: Icon(
                         Icons.filter_list_sharp,
                       ),

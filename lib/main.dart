@@ -1,5 +1,7 @@
 import 'package:farerush_empresa/commons/constante.dart';
 import 'package:farerush_empresa/commons/routes.dart';
+import 'package:farerush_empresa/store/catalogue_store.dart';
+import 'package:farerush_empresa/store/categorie_store.dart';
 import 'package:farerush_empresa/store/user_manager_store.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +16,20 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   setupLocators();
+
   runApp(MyApp());
 }
 
 final locate = GetIt.instance;
 
 void setupLocators() {
-  locate.registerSingleton(UserManagerStore());
+  locate.registerSingleton<CategorieStore>(CategorieStore());
+  locate.registerSingleton<UserManagerStore>(UserManagerStore());
+  locate.registerSingleton<CatalogueStore>(CatalogueStore());
+  /*
+  way to get information 
+  final UserManagerStore _user = GetIt.I.get<UserManagerStore>();
+   */
 }
 
 void configLoading() {
@@ -40,8 +49,11 @@ void configLoading() {
     ..customAnimation = CustomAnimation();
 }
 
-
 class MyApp extends StatelessWidget {
+  /*
+  Provider<CategorieStore>(create: (_) => CategorieStore()),
+        Provider<UserManagerStore>(create: (_) => UserManagerStore())
+   */
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -58,7 +70,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.black,
         scaffoldBackgroundColor: Colors.white,
         textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
-            .apply(bodyColor: secondaryColor),
+            .apply(bodyColor: primaryColor),
         canvasColor: Colors.transparent,
       ),
     );
